@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The EUth Times – Digital Edition</title>
+<style>
+:root{--bg:#F2F5FA;--ink:#0A0F24;--mut:#5B6478;--ac:#0089A8;--card:#fff;--line:#D9DEE8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070B1A;--ink:#E8ECF6;--mut:#98A2B8;--ac:#00D1FF;--card:#0E1530;--line:#1F2A4D;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#070B1A;--ink:#E8ECF6;--mut:#98A2B8;--ac:#00D1FF;--card:#0E1530;--line:#1F2A4D;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.mono,.k,.top,#nav,.tag2{font-family:ui-monospace,Consolas,Menlo,monospace}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;gap:8px;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.12em;color:var(--mut)}
+.top b{color:var(--ink)}.top div{display:flex;gap:6px}
+button{font:inherit;cursor:pointer;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:11px;letter-spacing:.08em}
+button.on,#nav button.on{background:#00D1FF;color:#0A0F24;border-color:#00D1FF}
+.pg{display:none;max-width:720px;margin:0 auto;padding:22px 18px 110px}.pg.on{display:block}
+.k{font-size:11px;letter-spacing:.18em;color:var(--ac);text-transform:uppercase;margin:0 0 8px}.k::before{content:"■ ";color:#00D1FF}
+h2{font-size:clamp(32px,9vw,52px);line-height:1.02;letter-spacing:-.03em;margin:0 0 10px;font-weight:800}
+h3{font-size:17px;margin:20px 0 4px}h3::before{content:"/ ";color:var(--ac)}
+.lede{color:var(--mut);font-size:18px;border-bottom:1px solid var(--ink);padding-bottom:16px;margin:0 0 18px}
+p{margin:0 0 12px}ul{padding-left:18px;margin:0 0 12px}li{margin-bottom:6px}li::marker{color:var(--ac)}
+.g{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:14px 0}
+.c{border:1px solid var(--line);background:var(--card);padding:14px;border-radius:14px}
+.c b{display:block;font:11px ui-monospace,Consolas,monospace;letter-spacing:.14em;color:var(--ac);text-transform:uppercase;margin-bottom:4px}
+.dk{background:#0A0F24;color:#fff;border-left:3px solid #00D1FF;padding:18px;border-radius:12px;font-size:21px;font-weight:600;line-height:1.3;margin:16px 0}
+.dk small{display:block;font:11px ui-monospace,Consolas,monospace;letter-spacing:.14em;color:#00D1FF;margin-top:8px}
+.ph{min-height:190px;border:1px dashed var(--ac);border-radius:14px;display:grid;place-items:center;background:var(--card) center/cover no-repeat;margin:14px 0;font:11px ui-monospace,Consolas,monospace;letter-spacing:.16em;color:var(--mut);text-align:center}
+.ph{border:0}.ph::after{content:none}.ph.n{display:none}
+.ph.t{min-height:300px}.ph.s{min-height:130px;margin:0}
+.cv{background:#0A0F24;color:#fff;border-radius:18px;padding:26px 20px;margin-top:6px}
+.cv .k{color:#00D1FF}.big{font-size:clamp(70px,22vw,140px);line-height:.88;font-weight:900;letter-spacing:-.05em;margin:12px 0 14px}.big i{font-style:normal;color:#00D1FF;display:block}
+.cv .ph{border-color:#00D1FF;background-color:#141C3D;color:#00D1FF}
+.cv p{color:#C3CBE0}.cv .tag2{color:#fff;letter-spacing:.1em;font-size:12px}
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.toc button{background:#141C3D;border-color:#243060;color:#fff;text-align:left;border-radius:10px}
+.r{display:grid;grid-template-columns:34px 52px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.r b{font:700 18px ui-monospace,Consolas,monospace;color:var(--ac)}.r em{color:var(--mut);font-style:normal}.r small{display:block;color:var(--mut)}
+#bg{width:100%;border-collapse:collapse;table-layout:fixed;margin:12px 0}
+#bg td{border:1px solid var(--ink);height:84px;padding:4px;text-align:center;font-size:11px;line-height:1.2;vertical-align:middle;background:var(--card)}
+#bg td.x{background:#00D1FF;color:#0A0F24;font-weight:700}#bg td.fr{background:#0A0F24;color:#00D1FF;font:700 15px ui-monospace,Consolas,monospace}
+#nav{position:fixed;left:0;right:0;bottom:0;z-index:9;display:flex;justify-content:center;gap:4px;padding:10px 8px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--line)}
+#nav button{padding:6px 0;min-width:28px;font-size:11px;flex:0 1 32px}
+#t{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:#0A0F24;color:#00D1FF;padding:10px 16px;border-radius:999px;font:12px ui-monospace,monospace;z-index:11;display:none}
+.edit [contenteditable]{outline:1px dashed transparent;border-radius:4px}.edit [contenteditable]:focus{outline-color:#00D1FF;background:rgba(0,209,255,.08)}
+.edit .ph{cursor:pointer}
+@media print{.top,#nav,#t{display:none}.pg{display:block!important;page-break-after:always}body{background:#fff}}
+</style></head><body>
+<!-- HOW TO ADD PHOTOS: upload images to an "images" folder in your repo, then write the path in the matching photo box, e.g. data-src="images/opening.jpg". Boxes with an empty data-src are hidden. -->
+<div class="top"><span><b>EUth TIMES</b> / ISSUE 01</span></div>
+
+<section class="pg on">
+<div class="cv"><p class="k">Erasmus+ / Youth Exchange / Issue 01</p>
+<h1 class="big e"><i class="e">EUth</i>TIMES</h1>
+<p class="tag2 e">NINE DAYS. ONE EUROPE. CONNECTED IN ACTION.</p>
+<div class="ph t" data-src=""></div>
+<p class="tag2 e">ĐAKOVO, CROATIA / 26.10 → 03.11.2026</p>
+<div class="toc"><button data-go="1">02 Welcome</button><button data-go="2">03 The project</button><button data-go="3">04 Programme</button><button data-go="4">05 Digital life</button><button data-go="5">06 Rural realities</button><button data-go="6">07 Green Europe</button><button data-go="7">08 EUth Bingo</button><button data-go="8">09 Voices &amp; gallery</button><button data-go="9">10 The future</button></div></div>
+</section>
+
+<section class="pg"><p class="k">02 / Editorial</p><h2>Welcome to Đakovo</h2><p class="lede">A note from the organisers</p>
+<div class="ph" data-src=""></div>
+<p>Welcome to the first edition of The EUth Times. This small newspaper tells the story of nine days in Đakovo, where young people from different countries met to learn from each other, question what they know and turn ideas into action.</p>
+<p>We explored three big questions: How do we live well in a digital world? What does a greener Europe really ask of us? And what makes rural places worth fighting for?</p>
+<div class="dk e">Young people are not only the future of Europe. They are already part of its present.</div>
+<p>Thank you to every participant, group leader, facilitator and volunteer. Turn the page and enjoy.</p>
+<div class="g"><div class="c"><b>What</b><span class="e">Erasmus+ Youth Exchange</span></div><div class="c"><b>Where</b><span class="e">Đakovo, Croatia</span></div><div class="c"><b>When</b><span class="e">26 Oct – 3 Nov 2026</span></div><div class="c"><b>Who</b><span class="e">[XX] participants, [X] countries</span></div></div>
+</section>
+
+<section class="pg"><p class="k">03 / The project</p><h2>What is “EUth Connected in Action”?</h2><p class="lede">Learning by doing – from the first ice-breaker to the final idea</p>
+<p>An Erasmus+ Youth Exchange where young people and group leaders explore the issues shaping Europe today – and act on them, using games, workshops, debates and daily reflection instead of lectures.</p>
+<div class="g"><div class="c"><b>Theme 1</b><h3 class="e" style="margin:0">Digital life</h3><p class="e">Wellbeing, footprints, digital citizenship.</p></div><div class="c"><b>Theme 2</b><h3 class="e" style="margin:0">Rural realities</h3><p class="e">Reimagining life outside the city.</p></div><div class="c"><b>Theme 3</b><h3 class="e" style="margin:0">Green Europe</h3><p class="e">Greenwashing and shared responsibility.</p></div></div>
+<div class="ph" data-src=""></div>
+<h3>Aims</h3><ul><li>Strengthen digital and civic skills</li><li>Raise awareness of sustainability</li><li>Give rural youth a voice</li><li>Build intercultural friendships and inspire follow-up projects</li></ul>
+<h3>Erasmus+ &amp; Youthpass</h3><p>Erasmus+ is the EU programme for education, training, youth and sport. Every participant receives a Youthpass certificate recognising what they learned.</p></section>
+
+<section class="pg"><p class="k">04 / Programme</p><h2>Nine days at a glance</h2><p class="lede">Morning learning · afternoon action · evening culture</p>
+<div class="r"><b class="e">01</b><em class="e">26.10</em><div><span class="e">Arrivals &amp; ice-breaking</span><small class="e">#Welcome</small></div></div>
+<div class="r"><b class="e">02</b><em class="e">27.10</em><div><span class="e">Getting to know each other · NGO Market</span><small class="e">Game night</small></div></div>
+<div class="r"><b class="e">03</b><em class="e">28.10</em><div><span class="e">Spaghetti tower · city game · digital citizenship</span><small class="e">Intercultural evening 1</small></div></div>
+<div class="r"><b class="e">04</b><em class="e">29.10</em><div><span class="e">Social media wellbeing · rural realities</span><small class="e">Intercultural evening 2</small></div></div>
+<div class="r"><b class="e">05</b><em class="e">30.10</em><div><span class="e">Reality check · Sell us your village! · mid-term evaluation</span><small class="e">Night out</small></div></div>
+<div class="r"><b class="e">06</b><em class="e">31.10</em><div><span class="e">Green or greenwashed? · Green Future Museum</span><small class="e">Halloween movie night</small></div></div>
+<div class="r"><b class="e">07</b><em class="e">01.11</em><div><span class="e">From idea to concept to impact</span><small class="e">Karaoke night</small></div></div>
+<div class="r"><b class="e">08</b><em class="e">02.11</em><div><span class="e">What is Erasmus+? · final evaluation · Youthpass</span><small class="e">Farewell party</small></div></div>
+<div class="r"><b class="e">09</b><em class="e">03.11</em><div><span class="e">Departures</span><small class="e">See you soon!</small></div></div></section>
+
+<section class="pg"><p class="k">05 / Theme 1 · Digital life</p><h2>Think before you scroll</h2><p class="lede">Social media, footprints and digital citizenship</p>
+<div class="ph" data-src=""></div>
+<p>We spend a large part of our lives online. The digital sessions asked a simple question: who is in control, us or the screen?</p>
+<h3>Risks, benefits, wellbeing</h3><p>Groups mapped connection, creativity and information against comparison, fake news and screen fatigue. Balance is a skill.</p>
+<h3>Footprint &amp; citizenship</h3><p>Every post leaves a trace. Digital citizens respect others, protect privacy, check sources and use their voice for good.</p>
+<div class="dk e">Being connected is not the same as being close.<small>PARTICIPANT REFLECTION</small></div>
+<h3>Tools for local change</h3><p>How can apps and social media help solve a problem in your own town or village? Teams turned tools into action.</p></section>
+
+<section class="pg"><p class="k">06 / Theme 2 · Rural realities</p><h2>“Sell us your village!”</h2><p class="lede">Young people reimagine life outside the city</p>
+<div class="ph" data-src=""></div>
+<p>Rural areas are often seen as places to leave. The exchange flipped that story: what would make young people want to stay – or come back?</p>
+<div class="g"><div class="c"><b>Challenges</b><span class="e">Fewer services, long distances, youth migration</span></div><div class="c"><b>Strengths</b><span class="e">Nature, tradition, tight-knit communities</span></div><div class="c"><b>Opportunities</b><span class="e">Remote work, local business, green tourism</span></div></div>
+<h3>Reimagining rural spaces</h3><p>Teams redesigned a village hall, a square or an old school into places that bring young people together – then pitched their villages to everyone.</p>
+<div class="dk e">Every village has a story. We just have to tell it well.</div></section>
+
+<section class="pg"><p class="k">07 / Theme 3 · Green Europe</p><h2>Green or greenwashed?</h2><p class="lede">Whose responsibility is it to protect our planet?</p>
+<div class="ph" data-src=""></div>
+<p>Everyone talks about being “green” – but how can we tell what is real? Participants learned to ask: is the claim specific, proven and honest – or just a nice picture of a leaf?</p>
+<h3>Green initiatives in Europe</h3><p>Groups presented inspiring projects, from community gardens to energy cooperatives, and discussed what could work at home.</p>
+<div class="dk e">One person’s trash is another person’s treasure.</div>
+<h3>European Green Future Museum</h3><p>Teams built a mini-museum of the future with exhibits, stories and solutions for a sustainable Europe.</p>
+<div class="g"><div class="c"><b>Reduce</b>Reuse &amp; repair</div><div class="c"><b>Question</b>Ask about claims</div><div class="c"><b>Local</b>Support nearby</div></div></section>
+
+<section class="pg"><p class="k">08 / Fun page</p><h2>EUth Bingo</h2><p class="lede">Tap a square when you spot it. First line shouts “ERASMUS!”</p>
+<table id="bg"><tbody>
+<tr><td>Someone yells “one more energizer!”</td><td>Group photo takes 7+ attempts</td><td>Spaghetti tower collapses</td><td>Someone mispronounces Đakovo</td><td>A snack gets traded</td></tr>
+<tr><td>Reflection group runs overtime</td><td>Wi-Fi password asked… again</td><td>A karaoke star is born</td><td>Late for breakfast</td><td>New “hello” learned</td></tr>
+<tr><td>Spot a greenwashed slogan</td><td>Spontaneous dance circle</td><td class="fr x">FREE</td><td>“Erasmus family!”</td><td>Costume in 5 minutes</td></tr>
+<tr><td>Selfie with a group leader</td><td>Village pitch you’d visit</td><td>Forgot someone’s name</td><td>Phone at 1% in city game</td><td>5-minute goodbye hug</td></tr>
+<tr><td>Story with #ErasmusPlus</td><td>Folk dance lesson</td><td>“See you soon!” (meant it)</td><td>Friendship across countries</td><td>Lost in translation, laughing</td></tr></tbody></table>
+<div class="dk e">Prize: the legendary title of [Bingo Champion of Đakovo] and first pick at the snack table.</div></section>
+
+<section class="pg"><p class="k">09 / Voices &amp; gallery</p><h2>In their own words</h2><p class="lede">What participants and group leaders say</p>
+<div class="c"><p class="e">“[Add a participant quote about the experience.]”</p><b class="e">Name, Country</b></div><div style="height:10px"></div>
+<div class="c"><p class="e">“[Add a quote about new friendships.]”</p><b class="e">Name, Country</b></div><div style="height:10px"></div>
+<div class="c"><p class="e">“[Add a quote from a group leader.]”</p><b class="e">Name, Country</b></div>
+<h3>Gallery</h3><div class="g"><div class="ph s" data-src=""></div><div class="ph s" data-src=""></div><div class="ph s" data-src=""></div><div class="ph s" data-src=""></div></div></section>
+
+<section class="pg"><p class="k">10 / The future</p><h2>The exchange ends. The impact begins.</h2><p class="lede">From idea to concept to creation to impact</p>
+<div class="ph" data-src=""></div>
+<h3>Ideas for follow-up projects</h3><ul><li class="e">[Idea 1 – title and one-line description]</li><li class="e">[Idea 2 – title and one-line description]</li><li class="e">[Idea 3 – title and one-line description]</li></ul>
+<h3>Partners</h3><p class="e">C:E:T Platform Croatia (host) · [Partner 2] · [Partner 3] · [Partner 4] · [Partner 5]</p>
+<h3>Credits &amp; contact</h3><p class="e">Editorial team: [Names] · Photos: [Names] · [email@organisation.org]</p>
+<div class="dk" style="font-size:12px;font-weight:400"><span class="e">Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the [National Agency]. Neither the European Union nor the granting authority can be held responsible for them.</span></div></section>
+
+<div id="nav"></div><div id="t"></div>
+<script>
+const $=(s,r=document)=>[...r.querySelectorAll(s)],P=$('.pg'),nav=document.getElementById('nav'),tt=document.getElementById('t');
+let cur=0,lines=0,rt=0;
+function toast(m){tt.textContent=m;tt.style.display='block';clearTimeout(rt);rt=setTimeout(()=>tt.style.display='none',2200)}
+P.forEach((_,i)=>{const b=document.createElement('button');b.textContent=i+1;b.setAttribute('aria-label','Page '+(i+1));b.onclick=()=>go(i);nav.appendChild(b)});
+function go(n){cur=Math.max(0,Math.min(P.length-1,n));P.forEach((p,i)=>p.classList.toggle('on',i==cur));$('#nav button').forEach((b,i)=>b.classList.toggle('on',i==cur));scrollTo(0,0)}
+$('[data-go]').forEach(b=>b.onclick=()=>go(+b.dataset.go));
+$('.ph').forEach(el=>{const u=el.dataset.src;if(u){el.style.backgroundImage='url("'+u+'")';el.classList.add('f')}else el.classList.add('n')});
+const tds=$('#bg td');
+function chk(){const x=tds.map(t=>t.classList.contains('x')),L=[];for(let i=0;i<5;i++){L.push([0,1,2,3,4].map(j=>i*5+j),[0,1,2,3,4].map(j=>j*5+i))}L.push([0,6,12,18,24],[4,8,12,16,20]);const n=L.filter(l=>l.every(k=>x[k])).length;if(n>lines)toast(n==12?'FULL CARD! ERASMUS!!!':'BINGO! Shout “ERASMUS!”');lines=n}
+tds.forEach(td=>td.addEventListener('click',()=>{if(td.classList.contains('fr'))return;td.classList.toggle('x');chk()}));
+let x0=0;document.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+document.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>80)go(cur+(d<0?1:-1))});
+document.addEventListener('keydown',e=>{if(e.key=='ArrowRight')go(cur+1);if(e.key=='ArrowLeft')go(cur-1)});
+go(0);
+</script></body></html>
